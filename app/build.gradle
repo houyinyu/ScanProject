@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.hyy.zxing'
+    namespace 'com.hyy.project'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.hyy.zxing"
+        applicationId "com.hyy.project"
         minSdk 24
         targetSdk 32
         versionCode 1
@@ -35,6 +35,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
 
-    //zxing3.4.0æœ€ä½æ”¯æŒandroid7.0
+    //zxing3.4.0×îµÍÖ§³Öandroid7.0
     implementation 'com.google.zxing:core:3.4.0'
 }

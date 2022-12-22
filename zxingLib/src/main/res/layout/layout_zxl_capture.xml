@@ -25,12 +25,12 @@
         android:id="@+id/viewfinderView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cornerColor="#ff6100"
-        app:frameColor="#ff6100"
+        app:cornerColor="#31CCB3"
+        app:frameColor="#31CCB3"
         app:frameRatio="0.8"
         app:labelTextColor="#fff"
         app:labelTextLocation="bottom"
-        app:laserColor="#ff6100"
+        app:laserColor="#31CCB3"
         app:scannerAnimationDelay="10"/>
 
 

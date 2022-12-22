@@ -1,4 +1,4 @@
-package com.hyy.zxing;
+package com.hyy.project;
 
 import org.junit.Test;
 

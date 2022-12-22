@@ -1,4 +1,4 @@
-package com.hyy.zxing;
+package com.hyy.zxing.ui;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;

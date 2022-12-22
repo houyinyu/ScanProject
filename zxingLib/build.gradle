@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+
 
 android {
     compileSdkVersion 30
@@ -33,4 +36,18 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.zxing:core:3.4.0'
+    implementation 'com.github.getActivity:XXPermissions:16.5'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.houyinyu'
+                artifactId = 'zxingLib'
+                version = '1.0'
+            }
+        }
+    }
 }
