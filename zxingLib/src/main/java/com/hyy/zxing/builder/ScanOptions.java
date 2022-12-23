@@ -1,12 +1,6 @@
 package com.hyy.zxing.builder;
 
 import android.content.Context;
-import android.graphics.Typeface;
-import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
-
-import java.util.Calendar;
 
 /**
  * @Author : Hou
@@ -21,8 +15,10 @@ public class ScanOptions {
     public int frameColor = 0;//扫码框颜色（全屏不显示）
     public int cornerColor = 0;//扫码框四个角的颜色（全屏不显示）
     public int laserColor = 0;//扫描线颜色
+    public boolean hideBtn = false;//隐藏闪光灯和相册
 
-    public CustomListener customListener;
+    public OnCustomListener customListener;
+    public OnScanListener scanListener;
 
 
     //下面一堆事选择连扫还是单扫的

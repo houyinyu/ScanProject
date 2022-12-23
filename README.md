@@ -7,6 +7,25 @@
     implementation 'com.github.houyinyu:zxingLib:1.0'
 ```
 ```Java
-     ScanBuilder scanBuilder=new ScanBuilder(context);
-     scanBuilder.setCornerColor(Color.parseColor("#E40404")).build();
+    ScanBuilder scanBuilder = new ScanBuilder(context);
+    scanBuilder.setOnScanListener(new OnScanListener() {
+        @Override
+        public void onResult(String qrCode) {
+        //返回二维码
+        LogUtils.i("result：" + qrCode);
+             }
+        });
+    scanBuilder.setLayoutRes(R.layout.layout_zxl_capture2, new OnCustomListener() {
+        @Override
+        public void customLayout(Activity activity) {
+           //自定义布局需要添加指定ID：
+           // R.id.surfaceView
+           // R.id.viewfinderView
+           // R.id.scanCode_lightLayout
+           // R.id.scanCode_lightTv
+           // R.id.scanCode_albumLayout
+           ImageView imageView = activity.findViewById(R.id.scanCode_back);
+            }
+        });
+    scanBuilder.setCornerColor(Color.parseColor("#E40404")).build();
 ```

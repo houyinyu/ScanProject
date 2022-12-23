@@ -1,5 +1,6 @@
 package com.hyy.zxing.builder;
 
+import android.app.Activity;
 import android.view.View;
 
 /**
@@ -7,6 +8,6 @@ import android.view.View;
  * @Time : 2022/12/22 15:24
  * @Description :
  */
-public interface CustomListener {
-    void customLayout(View v);
+public interface OnCustomListener {
+    void customLayout(Activity activity);
 }

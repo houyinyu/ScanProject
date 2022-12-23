@@ -22,6 +22,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
@@ -81,6 +82,9 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
         super.onCreate(savedInstanceState);
         if (scanOptions != null && scanOptions.layoutID != 0) {
             setContentView(scanOptions.layoutID);
+            if (scanOptions.customListener != null) {
+                scanOptions.customListener.customLayout(this);
+            }
         } else {
             setContentView(R.layout.layout_zxl_capture);
         }
@@ -129,6 +133,12 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
         if (scanOptions != null && scanOptions.laserColor != 0) {
             //扫描线颜色
             viewfinderView.setLaserColor(scanOptions.laserColor);
+        }
+
+        if (scanOptions != null && scanOptions.hideBtn) {
+            //隐藏闪光灯和相册
+            scanCode_lightLayout.setVisibility(View.GONE);
+            scanCode_albumLayout.setVisibility(View.GONE);
         }
 
         initCaptureHelper();
@@ -340,6 +350,9 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
      * @param result
      */
     private void requestScanType(String result) {
+        if (scanOptions != null && scanOptions.scanListener != null) {
+            scanOptions.scanListener.onResult(result);
+        }
         finish();
     }
 

@@ -1,15 +1,8 @@
 package com.hyy.zxing.builder;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.view.View;
-import android.view.ViewGroup;
-
-import androidx.annotation.ColorInt;
 
 import com.hyy.zxing.ui.CaptureActivity;
-
-import java.util.Calendar;
 
 /**
  * @Author : Hou
@@ -26,7 +19,7 @@ public class ScanBuilder {
     }
 
 
-    public ScanBuilder setLayoutRes(int res, CustomListener customListener) {
+    public ScanBuilder setLayoutRes(int res, OnCustomListener customListener) {
         scanOptions.layoutID = res;
         scanOptions.customListener = customListener;
         return this;
@@ -57,6 +50,15 @@ public class ScanBuilder {
         return this;
     }
 
+    public ScanBuilder hideBtn(boolean hideBtn) {
+        scanOptions.hideBtn = hideBtn;
+        return this;
+    }
+
+    public ScanBuilder setOnScanListener(OnScanListener scanListener) {
+        scanOptions.scanListener = scanListener;
+        return this;
+    }
 
     public void build() {
         CaptureActivity.startScan(scanOptions);
