@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         // R.id.scanCode_lightLayout
                         // R.id.scanCode_lightTv
                         // R.id.scanCode_albumLayout
+                        // R.id.scanCode_back
                         ImageView imageView = activity.findViewById(R.id.scanCode_back);
                     }
                 });

@@ -30,6 +30,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.content.ContextCompat;
@@ -69,6 +70,7 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
 
     private CaptureHelper mCaptureHelper;
 
+    private AppCompatImageView scanCode_back;
     private LinearLayoutCompat scanCode_lightLayout;
     private LinearLayoutCompat scanCode_albumLayout;
     private AppCompatTextView scanCode_lightTv;
@@ -102,10 +104,12 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
         if (viewfinderViewId != 0) {
             viewfinderView = findViewById(viewfinderViewId);
         }
+        scanCode_back = findViewById(R.id.scanCode_back);
         scanCode_lightLayout = findViewById(R.id.scanCode_lightLayout);
         scanCode_lightTv = findViewById(R.id.scanCode_lightTv);
         scanCode_albumLayout = findViewById(R.id.scanCode_albumLayout);
 
+        scanCode_back.setOnClickListener(this);
         scanCode_lightLayout.setOnClickListener(this);
         scanCode_albumLayout.setOnClickListener(this);
 
@@ -146,8 +150,9 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
 
     @Override
     public void onClick(View view) {
-
-        if (view.getId() == R.id.scanCode_lightLayout) {
+        if (view.getId() == R.id.scanCode_back) {
+            finish();
+        } else if (view.getId() == R.id.scanCode_lightLayout) {
             /*切换闪光灯*/
             mCaptureHelper.getCameraManager().switchFlashLight(handler);
         } else if (view.getId() == R.id.scanCode_albumLayout) {

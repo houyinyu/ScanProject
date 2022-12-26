@@ -4,7 +4,7 @@
 ## 使用方式
 
 ```Java
-    implementation 'com.github.houyinyu:zxingLib:1.0'
+      implementation 'com.github.houyinyu:ScanProject:1.1'
 ```
 ```Java
     ScanBuilder scanBuilder = new ScanBuilder(context);
@@ -24,6 +24,7 @@
            // R.id.scanCode_lightLayout
            // R.id.scanCode_lightTv
            // R.id.scanCode_albumLayout
+           // R.id.scanCode_back
            ImageView imageView = activity.findViewById(R.id.scanCode_back);
             }
         });

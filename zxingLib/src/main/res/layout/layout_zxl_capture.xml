@@ -85,4 +85,21 @@
         </RelativeLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/scanCode_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="6dp"
+            android:src="@drawable/icon_scan_close"/>
+    </RelativeLayout>
+
 </FrameLayout>
