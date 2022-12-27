@@ -17,6 +17,7 @@ package com.hyy.zxing.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.FeatureInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -141,6 +142,7 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
 
         if (scanOptions != null && scanOptions.hideBtn) {
             //隐藏闪光灯和相册
+            scanCode_back.setVisibility(View.GONE);
             scanCode_lightLayout.setVisibility(View.GONE);
             scanCode_albumLayout.setVisibility(View.GONE);
         }
@@ -310,6 +312,10 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
 
     @Override
     public void onResume() {
+        if (scanOptions.isHorizontal && getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+            //设置横屏
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
         super.onResume();
         mCaptureHelper.onResume();
     }

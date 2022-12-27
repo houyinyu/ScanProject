@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         ImageView imageView = activity.findViewById(R.id.scanCode_back);
                     }
                 });
+                scanBuilder.setHorizontalScreen(true);
                 scanBuilder.setCornerColor(Color.parseColor("#E40404")).build();
             }
         });

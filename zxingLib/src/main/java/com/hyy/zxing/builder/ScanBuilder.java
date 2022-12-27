@@ -50,6 +50,11 @@ public class ScanBuilder {
         return this;
     }
 
+    public ScanBuilder setHorizontalScreen(boolean isHorizontal) {
+        scanOptions.isHorizontal = isHorizontal;
+        return this;
+    }
+
     public ScanBuilder hideBtn(boolean hideBtn) {
         scanOptions.hideBtn = hideBtn;
         return this;

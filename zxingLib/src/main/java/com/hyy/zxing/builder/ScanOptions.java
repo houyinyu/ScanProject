@@ -16,6 +16,7 @@ public class ScanOptions {
     public int cornerColor = 0;//扫码框四个角的颜色（全屏不显示）
     public int laserColor = 0;//扫描线颜色
     public boolean hideBtn = false;//隐藏闪光灯和相册
+    public boolean isHorizontal = false;//是否强制横屏
 
     public OnCustomListener customListener;
     public OnScanListener scanListener;
