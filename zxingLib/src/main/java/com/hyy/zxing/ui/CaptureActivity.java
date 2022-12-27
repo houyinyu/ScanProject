@@ -316,6 +316,10 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
             //设置横屏
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
+        if (!scanOptions.isHorizontal && getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
+            //设置竖屏
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
         super.onResume();
         mCaptureHelper.onResume();
     }
