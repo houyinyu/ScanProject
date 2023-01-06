@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         //返回二维码
                         LogUtils.i("result：" + qrCode);
                     }
-                });
+                }).hideFrameColor(true).build();
 //                scanBuilder.setLayoutRes(R.layout.layout_zxl_capture2, new OnCustomListener() {
 //                    @Override
 //                    public void customLayout(Activity activity) {
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                });
 //                scanBuilder.setHorizontalScreen(true);
-                scanBuilder.setCornerHeight(300).setFrameColor(Color.parseColor("#60000000")).build();
+//                scanBuilder.setCornerHeight(300).setFrameColor(Color.parseColor("#60000000"));
             }
         });
     }

@@ -13,10 +13,10 @@ public class ScanOptions {
     public Context context;
     public int layoutID = 0;//自定义view
     public boolean isFull = false;//是否全屏
-    public int maskColor = R.color.viewfinder_mask;//遮层罩颜色
-    public int frameColor = R.color.viewfinder_frame;//扫码框颜色（全屏不显示）
-    public int cornerColor = R.color.viewfinder_corner;//扫码框四个角的颜色（全屏不显示）
-    public int laserColor = R.color.viewfinder_laser;//扫描线颜色
+    public int maskColor = 0;//遮层罩颜色
+    public int frameColor = 0;//扫码框颜色（全屏不显示）
+    public int cornerColor = 0;//扫码框四个角的颜色（全屏不显示）
+    public int laserColor = 0;//扫描线颜色
     public int cornerWidth = 0;//扫码框四个角的宽（粗细）
     public int cornerHeight = 0;//扫码框四个角的高（长短）
     public boolean hideBtn = false;//隐藏闪光灯和相册

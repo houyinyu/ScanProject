@@ -2,7 +2,10 @@ package com.hyy.zxing.builder;
 
 import android.content.Context;
 
+import com.hyy.zxing.R;
 import com.hyy.zxing.ui.CaptureActivity;
+
+import androidx.core.content.ContextCompat;
 
 /**
  * @Author : Hou
@@ -42,7 +45,9 @@ public class ScanBuilder {
 
     public ScanBuilder hideFrameColor(boolean hideFrameColor) {
         if (hideFrameColor) {
-            scanOptions.frameColor = scanOptions.maskColor;
+            scanOptions.frameColor = scanOptions.maskColor == 0 ?
+                    ContextCompat.getColor(scanOptions.context, R.color.viewfinder_mask) :
+                    scanOptions.maskColor;
         }
         return this;
     }
