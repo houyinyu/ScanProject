@@ -4,7 +4,7 @@
 ## 使用方式
 
 ```Java
-      implementation 'com.github.houyinyu:ScanProject:1.1'
+      implementation 'com.github.houyinyu:ScanProject:1.0'
 ```
 ```Java
     ScanBuilder scanBuilder = new ScanBuilder(context);

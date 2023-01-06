@@ -482,6 +482,16 @@ public final class ViewfinderView extends View {
         this.laserColor = laserColor;
     }
 
+    //扫码框边角的粗细
+    public void setCornerWidth(int cornerWidth) {
+        this.cornerRectWidth = cornerWidth;
+    }
+
+    //扫码框边角的长短
+    public void setCornerHeight(int cornerHeight) {
+        this.cornerRectHeight = cornerHeight;
+    }
+
     /**
      * 绘制激光扫描线
      *

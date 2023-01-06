@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ScanBuilder scanBuilder = new ScanBuilder(context);
+                scanBuilder.hideBtn(true);
                 scanBuilder.setOnScanListener(new OnScanListener() {
                     @Override
                     public void onResult(String qrCode) {
@@ -37,21 +38,21 @@ public class MainActivity extends AppCompatActivity {
                         LogUtils.i("result：" + qrCode);
                     }
                 });
-                scanBuilder.setLayoutRes(R.layout.layout_zxl_capture2, new OnCustomListener() {
-                    @Override
-                    public void customLayout(Activity activity) {
-                        //自定义布局需要添加指定ID：
-                        // R.id.surfaceView
-                        // R.id.viewfinderView
-                        // R.id.scanCode_lightLayout
-                        // R.id.scanCode_lightTv
-                        // R.id.scanCode_albumLayout
-                        // R.id.scanCode_back
-                        ImageView imageView = activity.findViewById(R.id.scanCode_back);
-                    }
-                });
-                scanBuilder.setHorizontalScreen(true);
-                scanBuilder.setCornerColor(Color.parseColor("#E40404")).build();
+//                scanBuilder.setLayoutRes(R.layout.layout_zxl_capture2, new OnCustomListener() {
+//                    @Override
+//                    public void customLayout(Activity activity) {
+//                        //自定义布局需要添加指定ID：
+//                        // R.id.surfaceView
+//                        // R.id.viewfinderView
+//                        // R.id.scanCode_lightLayout
+//                        // R.id.scanCode_lightTv
+//                        // R.id.scanCode_albumLayout
+//                        // R.id.scanCode_back
+//                        ImageView imageView = activity.findViewById(R.id.scanCode_back);
+//                    }
+//                });
+//                scanBuilder.setHorizontalScreen(true);
+                scanBuilder.setCornerHeight(300).setFrameColor(Color.parseColor("#60000000")).build();
             }
         });
     }

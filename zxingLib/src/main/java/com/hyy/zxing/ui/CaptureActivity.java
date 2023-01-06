@@ -142,9 +142,23 @@ public class CaptureActivity extends BaseActivity implements OnCaptureCallback,
 
         if (scanOptions != null && scanOptions.hideBtn) {
             //隐藏闪光灯和相册
-            scanCode_back.setVisibility(View.GONE);
             scanCode_lightLayout.setVisibility(View.GONE);
             scanCode_albumLayout.setVisibility(View.GONE);
+        }
+
+        if (scanOptions != null && scanOptions.hideBack) {
+            //隐藏闪光灯和相册
+            scanCode_back.setVisibility(View.GONE);
+        }
+
+        if (scanOptions != null && scanOptions.cornerWidth > 0) {
+            //设置边角框的粗细
+            viewfinderView.setCornerWidth(scanOptions.cornerWidth);
+        }
+
+        if (scanOptions != null && scanOptions.cornerHeight > 0) {
+            //设置边角框的长短
+            viewfinderView.setCornerHeight(scanOptions.cornerHeight);
         }
 
         initCaptureHelper();

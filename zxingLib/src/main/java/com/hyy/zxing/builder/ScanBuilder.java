@@ -40,8 +40,25 @@ public class ScanBuilder {
         return this;
     }
 
+    public ScanBuilder hideFrameColor(boolean hideFrameColor) {
+        if (hideFrameColor) {
+            scanOptions.frameColor = scanOptions.maskColor;
+        }
+        return this;
+    }
+
     public ScanBuilder setCornerColor(int cornerColor) {
         scanOptions.cornerColor = cornerColor;
+        return this;
+    }
+
+    public ScanBuilder setCornerWidth(int cornerWidth) {
+        scanOptions.cornerWidth = cornerWidth;
+        return this;
+    }
+
+    public ScanBuilder setCornerHeight(int cornerHeight) {
+        scanOptions.cornerHeight = cornerHeight;
         return this;
     }
 
@@ -57,6 +74,11 @@ public class ScanBuilder {
 
     public ScanBuilder hideBtn(boolean hideBtn) {
         scanOptions.hideBtn = hideBtn;
+        return this;
+    }
+
+    public ScanBuilder hideBack(boolean hideBack) {
+        scanOptions.hideBack = hideBack;
         return this;
     }
 
